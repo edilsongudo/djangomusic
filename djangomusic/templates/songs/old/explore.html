@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="../static/old/hamburger.css">
+    <link rel="stylesheet" type="text/css" href="../static/explore/explore.css">
+{% endblock %}
+
+{% block content %}
+    <nav>
+        <ul>
+            <li class="nav-item">Home</li>
+            <li class="nav-item">Blog</li>
+            <li class="nav-item">About Us</li>
+            <li class="nav-item">Login</li>
+            <li class="hamburger"><i class="fas fa-bars"></i></li>
+        </ul>
+    </nav>
+
+    <div class="sidebar">
+            <li >Home</li>
+            <li >Blog</li>
+            <li >About Us</li>
+            <li >Login</li>
+    </div>
+
+    <div class="mycontainer">
+
+        <div class="explore_users_component">
+
+            <div style="display: flex; justify-content: space-between; align-items: middle;">
+                <h1>Explore Users</h1>
+                <a href="#" class="see_all" style="align-self: center;">See All</a>
+            </div>
+
+            <div class="horizontal_slider">
+                <div class="slider_container">
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/20201028_194340.jpg">
+                            </div>
+                            <div class="user_name"><b>Edilson Gudo</b></div>
+                            <div class="user_ammount_of_songs">25 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/unnamed (1).jpg">
+                            </div>
+                            <div class="user_name"><b>Adam Horwitz</b></div>
+                            <div class="user_ammount_of_songs">11 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/a09TxL_1.jpg">
+                            </div>
+                            <div class="user_name"><b>Cristiano</b></div>
+                            <div class="user_ammount_of_songs">19 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/unnamed.jpg">
+                            </div>
+                            <div class="user_name"><b> Alvarrez Jay</b></div>
+                            <div class="user_ammount_of_songs">24 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/Alexis_Ren.jpg">
+                            </div>
+                            <div class="user_name"><b>Alexis Ren</b></div>
+                            <div class="user_ammount_of_songs">25 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/Alexis_Ren.jpg">
+                            </div>
+                            <div class="user_name"><b>Alexis Ren</b></div>
+                            <div class="user_ammount_of_songs">25 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="user">
+                            <div class="user_photo_container">
+                                <img class="user_photo" src="../static/users/Alexis_Ren.jpg">
+                            </div>
+                            <div class="user_name"><b>Alexis Ren</b></div>
+                            <div class="user_ammount_of_songs">25 Songs</div>
+                            <a href="#" class="user_button">Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="discover_component">
+            <h1>Discover Playlists</h1>
+
+            <div class="horizontal_slider">
+                <div class="slider_container">
+                    <div class="item">
+                        <div class="discover_image_container">
+                            <img src="../static/albumarts/kevin2/Dua_Lipa__Silk_City_-_Electricity_MK_Remix.jpg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="discover_image_container">
+                            <img src="../static/albumarts/kevin2/Lika_Morgan_-_Feel_The_Same_EDXs_Dubai_Skyline_Remix.jpg">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="discover_image_container">
+                            <img src="../static/albumarts/kevin2/Shakka_-_When_Will_I_See_You_Again_AMTRAC_Remix.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script type="text/javascript" src="../static/old/jquery.js"></script>
+    <script type="text/javascript" src="../static/old/navbar.js"></script>
+{% endblock %}
+

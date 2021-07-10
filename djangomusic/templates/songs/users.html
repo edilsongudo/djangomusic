@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="../static/fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../static/users/users.css">
+{% endblock %}
+
+{% block content %}
+
+  <div class="title">
+    <h2>Discover Users</h2>
+  </div>
+
+    <div class="grid-container">
+
+      {% for user in users %}
+          <a href="{{ user.username }}" class="grid-item">
+              <img src="../static/profile_pics/{{ user.image_file }}"/>
+            <div>
+
+              <div class="user_name"><b>{{ user.username }}</b></div>
+              <div class="user_ammount_of_songs">{{ user.songs|length }} Songs</div>
+            </div>
+            <!--<a class="user" href="{{ user.username }}" class="user_button">Profile</a> -->
+          </a>
+      {% endfor %}
+
+    </div>
+
+{% endblock content %}
+
+
+
+{% block script %}
+{% endblock %}

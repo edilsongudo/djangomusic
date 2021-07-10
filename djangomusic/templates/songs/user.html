@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block style%}
+    <link rel="stylesheet" type="text/css" href="../static/users/user.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="info">
+            <img class="" src="{{ image_file }}">
+            <h1>{{ user.username }}</h1>
+        </div>
+        <div class="info2">
+            <p>Hi there, my name is {{ user.username }}, and love music. Check out my playlist, you may find something you like</</p>
+            <div><a class="playlist-link" href="{{ user.username }}/player">Playlist</a></div>
+        </div>
+
+
+    </div>
+{% endblock content %}

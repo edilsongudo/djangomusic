@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Music Player</title>
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap4.4/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../static/layout/layout.css">
+    <link rel="stylesheet" type="text/css" href="../static/old/hamburger.css">
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        <nav>
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home', user=current_user.username ) }}">My Songs</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('account') }}">Account</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                <li class="hamburger"><i class="fas fa-bars"></i></li
+            </ul>
+        </nav>
+
+        <div class="sidebar">
+            <li><a class="nav-link" href="{{ url_for('home', user=current_user.username ) }}">My Songs</a></li>
+            <li><a class="nav-link" href="{{ url_for('account') }}">Account</a></li>
+            <li><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+        </div>
+
+    {% else %}
+        <nav>
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('users') }}">Explore</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                <li class="hamburger"><i class="fas fa-bars"></i></li
+            </ul>
+        </nav>
+
+        <div class="sidebar">
+                <li><a class="nav-link" href="{{ url_for('users') }}">Explore</a></li>
+                <li><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
+    {% block script %}
+    {% endblock %}
+    <script type="text/javascript" src="../static/old/jquery.js"></script>
+    <script type="text/javascript" src="../static/old/navbar.js"></script>
+    <script type="text/javascript" src="../static/bootstrap4.4/bootstrap.min.js"></script>
+</body>
+</html>

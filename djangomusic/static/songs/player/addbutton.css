@@ -1,0 +1,40 @@
+/*body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(90deg, #A1128B 50%, white);
+    background-image: linear-gradient(90deg, #c85d34, #ad444e);
+
+    color: white;
+}*/
+
+.file-upload {
+    font-size: 12px;
+    width: 98%;
+    margin: 0px auto;
+}
+
+
+label {
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.plussign {
+    position: absolute;
+    color: black;
+    font-size: 80px;
+    margin-top: -38px;
+    margin-left: 2px;
+}
+
+.music-container {
+    margin: 10px;
+}
+
+#small {
+    font-size: 16px;
+}
+

@@ -1,0 +1,40 @@
+body {
+}
+
+.info {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    flex-wrap: wrap-reverse;
+}
+
+.info2 {
+    max-width: 450px;
+}
+
+img {
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  cursor: zoom-in;
+  background-color: lightgray;
+}
+
+a.playlist-link {
+    color: white;
+    background: #1C9ACEed;
+    padding: 10px;
+    width: 100px;
+    height: 40px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    background: #1479AEC9;
+    text-decoration: none;
+}
