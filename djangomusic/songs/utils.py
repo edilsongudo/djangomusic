@@ -4,6 +4,19 @@ import os
 import music_tag
 
 
+def get_only_meta(file):
+
+    meta = music_tag.load_file(file)
+
+    try:
+        image_data = meta['artwork'].first.data
+        artwork = image_data
+    except Exception as e:
+        artwork = ""
+
+    return {'album': meta['album'].value, 'artist': meta['artist'].value, 'title': meta['tracktitle'].value, 'filename': file, 'artwork': artwork}
+
+
 def get_meta(folder, album_dest, file):
 
     song = os.path.join(f'{folder}/{file}')
