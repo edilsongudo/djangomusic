@@ -6,21 +6,21 @@ from django.contrib.auth.models import User
 
 
 def user_directory_path(instance, filename):
-    return f'user_{instance.user.pk}/{filename}'
+    return f'{instance.user.profile.unique_id}/{filename}'
 
 
 def user_directory_image_path(instance, filename):
-    return f'albumarts/{instance.user.pk}/{filename}'
+    return f'albumarts/{instance.user.profile.unique_id}/{filename}'
 
 
 class Song(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    song_filename = models.CharField(max_length=200)
-    song_title = models.CharField(max_length=200, null=True)
-    song_album = models.CharField(max_length=200, null=True)
-    song_artist = models.CharField(max_length=200, null=True)
-    song_genre = models.CharField(max_length=200, null=True)
-    song_artwork = models.ImageField(
+    filename = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
+    album = models.CharField(max_length=200, null=True)
+    artist = models.CharField(max_length=200, null=True)
+    genre = models.CharField(max_length=200, null=True)
+    artwork = models.ImageField(
         upload_to=user_directory_image_path, null=True)
     music = models.FileField(upload_to=user_directory_path)
     date_uploaded = models.DateTimeField(default=timezone.now)

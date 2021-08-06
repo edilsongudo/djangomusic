@@ -13,7 +13,7 @@
 <body>
 
 <div class="home">
-     {% if request.user.username == user.username %}
+     {% if request.user == user %}
         <div class="file-upload">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -31,7 +31,7 @@
      {% endif %}
 
          {% if songs|length > 0 %}
-            <audio class="{{ songs.0.filename }}" src="{% get_media_prefix %}{{ user|safe }}" id="audio"></audio>
+            <audio class="{{ songs.0.filename }}" src="{{ songs.0.music.url }}" id="audio"></audio>
          {% endif %}
 
 
@@ -46,7 +46,7 @@
               <span class="{{ song.filename }}" style="display: none;"></span>
 
 
-                <div class="img-container2" id="{{ song.filename }}" style="padding: 8px; {% if song.artwork != '' %} background-image:url({% get_media_prefix %}albumarts/{{ user }}/{{ song.artwork }});{% endif %}">
+                <div class="img-container2" id="{{ song.filename }}" style="padding: 8px; {% if song.artwork != '' %} background-image:url({{ song.artwork.url }});{% endif %}">
                      {% if song.artwork == "" %}
                     <span><i class="fas fa-music"></i></span>
                      {% endif %}
@@ -185,14 +185,15 @@
             </div>
     </div>
 
+    <script src="{% static 'songs/old/jquery.js' %}"></script>
+
     <script type="text/javascript">
-        const songs = {{ songs|safe }}
-        const user = "{{ user|safe }}"
-        const get_media_prefix = "{% get_media_prefix %}"
+            const user = "{{ user|safe }}"
+            const get_media_prefix = "{% get_media_prefix %}"
+            const unique_id = "{{ unique_id }}"
     </script>
 
     <script src="{% static 'songs/player/player.js' %}"></script>
-    <script src="{% static 'songs/player/togleplayerorlist.js' %}"></script>
 
 </body>
 </html>
