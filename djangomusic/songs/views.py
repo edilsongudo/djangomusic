@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import MusicForm
 from .models import Song
 from .utils import *
@@ -45,6 +45,7 @@ def player(request, username):
             form.instance.filename = filename
             form.instance.artwork = artwork
             form.save()
+            return redirect('player', username=username)
     context = {'user': user, 'songs': songs,
                'form': form, 'unique_id': unique_id}
     return render(request, 'songs/player.html', context)
